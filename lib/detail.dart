@@ -18,13 +18,13 @@ class _DetailPageState extends State<DetailPage> {
         title: Text(widget.items.data['name']),
       ),
       body: Container(
-      child: Card(
-        child: ListTile(
-          title: Text(widget.items.data['name']),
-          subtitle: Text(widget.items.data['modAdministracion']),
+        child: Card(
+          child: ListTile(
+            title: Text(widget.items.data['name']),
+            subtitle: Text(widget.items.data['modAdministracion']),
+          ),
         ),
       ),
-    ),
     );
   }
 }

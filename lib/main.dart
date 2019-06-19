@@ -49,6 +49,12 @@ class _ListPageState extends State<ListPage> {
     return qn.documents;
   }
 
+navigateToDetail(DocumentSnapshot items){
+  //Navigator.push(context, MaterialPageRoute(builder: (context) => DetailPage(items: items,)));
+  //Navigator.push(context, MaterialPageRoute(builder: (context) => DetailPage(items: items,)));
+  Navigator.push(context, MaterialPageRoute(builder: (context) => DetailPage(items: items,)));
+}
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -57,7 +63,7 @@ class _ListPageState extends State<ListPage> {
           builder: (_, snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
               return Center(
-                child: Text("Loading ... "),
+                child: Text("Cargando... "),
               );
             } else {
               return ListView.builder(
@@ -65,6 +71,7 @@ class _ListPageState extends State<ListPage> {
                 itemBuilder: (_, index){
                   return ListTile(
                     title: Text(snapshot.data[index].data['name']),
+                    onTap: () => navigateToDetail(snapshot.data[index]),
                   );
                 }
               );
@@ -75,6 +82,10 @@ class _ListPageState extends State<ListPage> {
 }
 
 class DetailPage extends StatefulWidget {
+
+  final DocumentSnapshot items;
+  DetailPage({this.items})
+
   @override
   _DetailPageState createState() => _DetailPageState();
 }
@@ -82,6 +93,13 @@ class DetailPage extends StatefulWidget {
 class _DetailPageState extends State<DetailPage> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      child: Card(
+        child: ListTile(
+          title: Text(widget.items.data['name']),
+          subtitle: Text(widget.items.data['modAdministracion']),
+        ),
+      ),
+    );
   }
 }

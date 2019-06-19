@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "927940308913",
+    "firebase_url": "https://listacurso-312df.firebaseio.com",
+    "project_id": "listacurso-312df",
+    "storage_bucket": "listacurso-312df.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:927940308913:android:6396f46afa71b299",
+        "android_client_info": {
+          "package_name": "com.umsa.proyecto1001"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "927940308913-muluob5vdoghhd1uupvpfv508kmripeh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.umsa.proyecto1001",
+            "certificate_hash": "84e131af674ee3b0c2bfc9d6b6cfa0c20ace2c97"
+          }
+        },
+        {
+          "client_id": "927940308913-sq9s4k08jnobrb35d0fm7j53uj5dd3se.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2_8EViYA8tqJYyvVWG3XNQZ7iY4kzRiE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "927940308913-sq9s4k08jnobrb35d0fm7j53uj5dd3se.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

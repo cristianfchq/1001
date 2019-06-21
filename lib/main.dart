@@ -44,23 +44,35 @@ class ListPage extends StatefulWidget {
 }
 
 class _ListPageState extends State<ListPage> {
+
+  Future _data;
+
   Future getPosts() async {
     var firestore = Firestore.instance;
     QuerySnapshot qn = await firestore.collection('items').getDocuments();
     return qn.documents;
   }
 
-navigateToDetail(DocumentSnapshot items){
+  navigateToDetail(DocumentSnapshot items){
   //Navigator.push(context, MaterialPageRoute(builder: (context) => DetailPage(items: items,)));
   //Navigator.push(context, MaterialPageRoute(builder: (context) => DetailPage(items: items,)));
-  Navigator.push(context, MaterialPageRoute(builder: (context) => DetailPage(items: items,)));
-}
+    Navigator.push(context, MaterialPageRoute(builder: (context) => DetailPage(items: items,)));
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+    _data = getPosts();
+
+  }  
 
   @override
   Widget build(BuildContext context) {
     return Container(
       child: FutureBuilder(
-          future: getPosts(),
+          future: _data,
           builder: (_, snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
               return Center(
